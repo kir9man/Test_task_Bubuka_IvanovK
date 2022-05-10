@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <ul class="list-articles">
+	{% for post in content_mp %}
+			<li><h2>{{post.cont_name}}</h2>
+	{{post.content|truncatewords:50}}
+			<div class="clear"></div>
+			<p class="link-read-post"><a href="{% url 'continent_info' post.slug_name %}">Подробнее</a></p>
+			</li>
+	{% endfor %}
+</ul>
+
+{%  endblock %}

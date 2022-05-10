@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1>{{title.cont_name}}</h1>
+<p> {{title.content}}</p>
+<h2> Крупнейшие города континента </h2>
+    <table border="1" cellpadding="2px" align="center">
+            <tr>
+                <td>М</td>
+                <td>Город/Агломерация</td>
+                <td>Страна</td>
+                <td>Население агломерации(т.ч.)</td>
+            </tr>
+
+        {% for city in cont_table %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{city.city}}</td>
+                <td>{{city.country}}</td>
+                <td>{{city.population}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
